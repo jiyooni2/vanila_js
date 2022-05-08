@@ -1,0 +1,49 @@
+body {
+  margin: 0px;
+}
+
+header {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  background: lightgray;
+}
+
+.toDo {
+  display: flex;
+  flex-direction: row;
+}
+
+.list {
+  background-color: khaki;
+  display: flex;
+  flex-direction: column;
+}
+
+.toDo > button {
+  background-color: aqua;
+  margin-left: auto;
+  /* margin-right : auto , 한 항목만 왼쪽정렬 */
+  /* margin: auto , 한 항목만 가운데정렬 */
+  /* auto로 설정해두면, 남은 모든 공간 margin이 차지 */
+}
+.input-toDo {
+  width: 80%;
+}
+
+.input {
+  bottom: 0px;
+}
+
+.footer {
+  position: relative;
+  background: blueviolet;
+}
+
+.image {
+  display: flex;
+  margin: auto;
+  width: 60px;
+  height: 20px;
+}

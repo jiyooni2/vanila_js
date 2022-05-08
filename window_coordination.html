@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates</title>
+    <style>
+      body {
+        background-color: black;
+        /* overflow: hidden; : scroll안되게 할 수 있음 */
+      }
+      div {
+        width: 250px;
+        height: 250px;
+        background-color: blanchedalmond;
+        margin-bottom: 4px;
+        border-radius: 4px;
+      }
+      .special {
+        background-color: lightsalmon;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="special"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      const special = document.querySelector(".special");
+      special.addEventListener("click", (event) => {
+        const rect = special.getBoundingClientRect();
+        //rect는 viewport에 상대적 위치를 나타냄
+        console.log(rect);
+        console.log(`client :${event.clientX},${event.clientY}`);
+        console.log(`page :${event.pageX},${event.pageY}`);
+      }); //이벤트 리스너는 어느 HTML DOM요소(elements, document,window,등등)에도 할 수 가 있음
+    </script>
+  </body>
+</html>

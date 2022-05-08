@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer>
+      window.addEventListener("mousemove", (event) => {
+        //console.log(event.pageX);
+        //console.log(event.pageY);
+        const target = document.querySelector(".target");
+        console.log(event.pageX);
+        const targetCSS = document.querySelector("style");
+        targetCSS.innerHTML = `
+        img
+        {
+            width:100px;
+            height:100px;
+        }
+        .target{
+            position:relative;
+            color:white;
+            left:${event.pageX - 50}px;
+            top:${event.pageY - 50}px;
+        }
+        body{
+            background-color:black;
+        }
+        .horizontal {
+        border-left: 3px solid white;
+        height: 100%;
+        }
+        .vertical {
+        border-top: 3px solid white;
+        width:100%;
+        }
+        `;
+        const p = document.querySelector("div.target p");
+        p.innerHTML = `${event.pageX},${event.pageY}`;
+      });
+    </script>
+    <style>
+      body {
+        background-color: black;
+      }
+      .horizontal {
+        border-left: 3px solid white;
+        height: 100px;
+      }
+      .vertical {
+        border-top: 3px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="target">
+        <img src="./target.png" />
+        <p>aa</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--  
+    -->

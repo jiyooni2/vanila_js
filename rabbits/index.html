@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+        background-color: black;
+        text-align: center;
+      }
+      div {
+        background-color: black;
+        display: flex;
+        flex-flow: column wrap;
+      }
+      img {
+        display: block;
+        margin: auto;
+        /* 이상하다 싶을 때는 개발자도구 열어보자 */
+        width: 100px;
+        height: 200px;
+      }
+      button {
+        outline: none;
+        background-color: tomato;
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+        margin: 16px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button">Find the rabbit</button>
+    <div>
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/rabbit.png" alt="rabbit" class="rabbit" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+      <img src="./img/carrot.png" alt="carrot" class="carrot" />
+    </div>
+    <script>
+      const button = document.querySelector(".button");
+      button.addEventListener("click", () => {
+        const rabbit = document.querySelector(".rabbit");
+        const rect = rabbit.getBoundingClientRect();
+        //window.scrollTo(rect.x, rect.y - 200);
+        rabbit.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    </script>
+  </body>
+</html>

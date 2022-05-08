@@ -1,0 +1,63 @@
+body {
+  background-image: url("./img/background.png");
+  background-size: 800px;
+  background-repeat: no-repeat;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: beige;
+  border: transparent;
+  width: 40px;
+  height: 50px;
+}
+
+.popup {
+  background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  width: 300px;
+  height: 200px;
+  display: none;
+  z-index: 100;
+}
+
+.popup p {
+  text-align: center;
+}
+
+.popup button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.timer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+
+.field {
+  background-color: transparent;
+  width: 100vw;
+  height: 30vh;
+  left: 0px;
+  transform: translateY(25px);
+}
+
+.bug {
+  position: absolute;
+}
+
+.carrot {
+  position: absolute;
+}

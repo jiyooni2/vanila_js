@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      body {
+        background-color: black;
+        text-align: center;
+      }
+      section {
+        width: 50%;
+        margin: 50px auto;
+        background-color: brown;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      img {
+        z-index: 100;
+        will-change: opacity;
+      }
+      h1,
+      h3,
+      span {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="img/avatar.png" alt="avatar" />
+      <h1 id="brand">Dream Coding</h1>
+      <h3>Don't forget to code your dream</h3>
+    </section>
+    <span>Hello World!</span>
+    <script>
+      //유연한 사용 가능
+      const image = document.querySelector('img[src="img/avatar.png"]');
+      const images = document.querySelectorAll("img");
+      const section = document.querySelector("section");
+      //element 생성
+      const h2 = document.createElement("h2");
+      h2.setAttribute("class", "title"); //<h2 class="title"></h2>
+      h2.textContent = "This is a title"; //<h2 class="title">This is a title</h2>
+
+      section.append(h2); //부모(section)의 제일 끝에 추가
+      section.insertBefore(h2, document.querySelector("section h3"));
+      //둘 다 실행하면, h2 h3 순서로 보여짐
+      //h2는 유일한 element
+      section.removeChild(h2);
+
+      //전체적인, 새로 추가된 애들의 DOM Tree, Render Tree
+      //다 만들겠지, 부분적으로 update할 경우엔 사용 금지
+      // section.innerHTML = `
+      // <img src="img/avatar.png" alt="avatar/>
+      // <h1 id="brand">Dream Coding</h1>
+      // `;
+    </script>
+  </body>
+</html>

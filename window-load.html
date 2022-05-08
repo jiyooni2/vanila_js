@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./test.js"></script>
+    <!--HTML(document)만 완료되면 호출-->
+    <!-- DomContentLoaded event 발생 이전에 호출 -->
+  </head>
+  <body>
+    <script>
+      //only HTML(CSs loading not wait), head의 HTML도 기다려야겠지.
+      window.addEventListener("DOMContentLoaded", () => {
+        console.log("DomContentLoaded");
+      });
+
+      //after resources(css, images)
+      window.addEventListener("load", () => {
+        console.log("load");
+      });
+      //페이지에 필요한 모든 리소스가 load되면(load event)
+      //callback 실행
+
+      //before unload
+      window.addEventListener("beforeunload", () => {
+        console.log("beforeunload");
+      });
+      //resources is being unloaded
+      window.addEventListener("unload", () => {
+        console.log("unload");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates</title>
+    <style>
+      body {
+        background-color: black;
+        /* overflow: hidden; : scroll안되게 할 수 있음 */
+      }
+      div {
+        width: 250px;
+        height: 250px;
+        background-color: blanchedalmond;
+        margin-bottom: 4px;
+        border-radius: 4px;
+      }
+      .button {
+        position: fixed;
+        display: inline-block;
+        top: 20px;
+        right: 20px;
+        width: 300px;
+        height: 20px;
+        background-color: black;
+      }
+      .special {
+        background-color: lightsalmon;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button">
+      <button class="scrollBy100" type="button">scrollBy100</button>
+      <button class="scrollTo100" type="button">scrollTo100</button>
+      <button class="scrollToSpecial" type="button">scrollToSpecial</button>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="special"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+      const scrollBy100 = document.querySelector(".scrollBy100");
+      scrollBy100.addEventListener("click", (event) => {
+        window.scrollBy(0, 100);
+        //window.scrollBy({ top: 100, left: 0, behavior: "smooth" });
+      });
+      const scrollTo100 = document.querySelector(".scrollTo100");
+      scrollTo100.addEventListener("click", (event) => {
+        const x = window.scrollX;
+        window.scrollTo(x, 100);
+      });
+      const scrollToSpecial = document.querySelector(".scrollToSpecial");
+      scrollToSpecial.addEventListener("click", (event) => {
+        console.log("SAF");
+        const special = document.querySelector(".special");
+        special.scrollIntoView();
+      });
+    </script>
+  </body>
+</html>
